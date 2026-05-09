@@ -1,4 +1,4 @@
-const API_BASE = "/api";
+const API_BASE = "https://imani-backend-k624.onrender.com";
 
 export function getToken() {
   return localStorage.getItem("adminToken") || sessionStorage.getItem("adminToken");
