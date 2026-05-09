@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Panel - Customer Service | Imani Logistics UK</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+<div class="admin-container">
+
+    <!-- ================= SIDEBAR ================= -->
+    <aside class="sidebar">
+        <div class="logo">
+            <h2>Imani Logistics UK</h2>
+        </div>
+
+        <ul class="sidebar-menu">
+            <li><a href="dashboard.html"><i class="fas fa-chart-line"></i> Dashboard</a></li>
+            <li><a href="quotes.html"><i class="fas fa-file-invoice"></i> Quote Requests</a></li>
+            <li><a href="shipments.html"><i class="fas fa-truck"></i> Shipments</a></li>
+            <li><a href="customers.html"><i class="fas fa-users"></i> Customers</a></li>
+
+            <li class="active">
+                <a href="customer-service.html">
+                    <i class="fas fa-headset"></i> Customer Service
+                </a>
+            </li>
+
+            <li><a href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+
+            <li>
+                <a href="#" id="logoutBtn">
+                    <i class="fas fa-sign-out-alt"></i> Log Out
+                </a>
+            </li>
+        </ul>
+    </aside>
+
+    <!-- ================= MAIN CONTENT ================= -->
+    <main class="main-content">
+
+        <!-- ================= TOPBAR ================= -->
+        <div class="topbar">
+            <h1>Customer Service Desk</h1>
+            <div class="admin-profile">
+                <i class="fas fa-user-circle"></i>
+            </div>
+        </div>
+
+        <!-- ================= SUPPORT STATS (LIVE) ================= -->
+        <section class="stats">
+
+            <div class="card">
+                <h3>Total Tickets</h3>
+                <p id="totalTickets">0</p>
+            </div>
+
+            <div class="card">
+                <h3>Open Tickets</h3>
+                <p id="openTickets">0</p>
+            </div>
+
+            <div class="card">
+                <h3>Resolved</h3>
+                <p id="resolvedTickets">0</p>
+            </div>
+
+            <div class="card">
+                <h3>AI Escalations</h3>
+                <p id="aiEscalations">0</p>
+            </div>
+
+        </section>
+
+        <!-- ================= SUPPORT TABLE ================= -->
+        <section class="table-section">
+
+            <div class="section-header">
+                <h2>Customer Support Tickets</h2>
+
+                <div class="search-bar">
+                    <input type="text" 
+                           id="searchTickets" 
+                           placeholder="Search tickets...">
+                </div>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Ticket ID</th>
+                        <th>Customer</th>
+                        <th>Subject</th>
+                        <th>AI Sentiment</th>
+                        <th>Priority</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody id="ticketsTableBody">
+                    <!-- Real-time tickets load here -->
+                </tbody>
+
+            </table>
+
+        </section>
+
+    </main>
+</div>
+
+<!-- ================= VIEW TICKET MODAL ================= -->
+<div class="modal" id="ticketModal">
+    <div class="modal-content">
+
+        <h2>Support Ticket</h2>
+
+        <input type="text" id="modalCustomer" class="form-control" readonly>
+        <input type="text" id="modalSubject" class="form-control" readonly>
+
+        <textarea id="modalMessage" 
+                  class="form-control" 
+                  readonly></textarea>
+
+        <textarea id="replyBox" 
+                  class="form-control" 
+                  placeholder="Write response or generate AI reply...">
+        </textarea>
+
+        <button class="btn btn-outline" id="generateReplyBtn">
+            <i class="fas fa-robot"></i> Generate AI Reply
+        </button>
+
+        <button class="btn btn-primary" id="sendReplyBtn">
+            Send Response
+        </button>
+
+        <button class="btn btn-outline" id="closeTicketModal">
+            Close
+        </button>
+
+    </div>
+</div>
+
+<!-- ================= SCRIPTS ================= -->
+<script type="module" src="protect.js"></script>
+<script type="module" src="customer-service.js"></script>
+<script type="module" src="logout.js"></script>
+
+</body>
+</html>

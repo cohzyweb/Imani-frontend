@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Panel - Settings | Imani Logistics UK</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+<div class="admin-container">
+
+    <aside class="sidebar">
+        <div class="logo">
+            <h2>Imani Logistics UK</h2>
+        </div>
+
+        <ul class="sidebar-menu">
+            <li><a href="dashboard.html"><i class="fas fa-chart-line"></i> Dashboard</a></li>
+            <li><a href="quotes.html"><i class="fas fa-file-invoice"></i> Quote Requests</a></li>
+            <li><a href="shipments.html"><i class="fas fa-truck"></i> Shipments</a></li>
+            <li><a href="customers.html"><i class="fas fa-users"></i> Customers</a></li>
+            <li><a href="customer-service.html"><i class="fas fa-headset"></i> Customer Service</a></li>
+            <li class="active">
+                <a href="settings.html"><i class="fas fa-cog"></i> Settings</a>
+            </li>
+            <li>
+                <a href="#" id="logoutBtn">
+                    <i class="fas fa-sign-out-alt"></i> Log Out
+                </a>
+            </li>
+        </ul>
+    </aside>
+
+    <main class="main-content">
+
+        <div class="topbar">
+            <h1>System Settings</h1>
+            <div class="admin-profile">
+                <i class="fas fa-user-circle"></i>
+            </div>
+        </div>
+
+        <!-- COMPANY -->
+        <section class="table-section">
+            <div class="section-header">
+                <h2><i class="fas fa-building"></i> Company Information</h2>
+            </div>
+
+            <div class="form-group">
+                <label>Company Name</label>
+                <input type="text" id="companyName">
+            </div>
+
+            <div class="form-group">
+                <label>Support Email</label>
+                <input type="email" id="supportEmail">
+            </div>
+
+            <div class="form-group">
+                <label>Contact Number</label>
+                <input type="text" id="contactNumber">
+            </div>
+
+            <div class="form-group">
+                <label>Company Address</label>
+                <textarea id="companyAddress"></textarea>
+            </div>
+
+            <button class="btn btn-primary" id="saveCompanyBtn">
+                Save Company Settings
+            </button>
+        </section>
+
+        <!-- NOTIFICATIONS -->
+        <section class="table-section">
+            <div class="section-header">
+                <h2><i class="fas fa-bell"></i> Notification Preferences</h2>
+            </div>
+
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" id="notifyQuotes">
+                    Email alerts for new quote requests
+                </label>
+            </div>
+
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" id="notifyTickets">
+                    Email alerts for support tickets
+                </label>
+            </div>
+
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" id="notifySMS">
+                    SMS alerts for urgent shipment issues
+                </label>
+            </div>
+
+            <button class="btn btn-primary" id="saveNotificationsBtn">
+                Save Notification Settings
+            </button>
+        </section>
+
+        <!-- AI -->
+        <section class="table-section">
+            <div class="section-header">
+                <h2><i class="fas fa-robot"></i> AI Configuration</h2>
+            </div>
+
+            <div class="form-group">
+                <label>AI Auto-Reply Enabled</label>
+                <select id="aiEnabled">
+                    <option>Enabled</option>
+                    <option>Disabled</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Default Response Tone</label>
+                <select id="aiTone">
+                    <option>Professional</option>
+                    <option>Friendly</option>
+                    <option>Formal</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Escalation Threshold</label>
+                <select id="aiEscalation">
+                    <option>Low Sentiment Only</option>
+                    <option>High & Angry Sentiment</option>
+                    <option>All Negative Messages</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>API Key</label>
+                <input type="password" id="aiApiKey">
+            </div>
+
+            <button class="btn btn-primary" id="saveAiBtn">
+                Save AI Settings
+            </button>
+        </section>
+
+    </main>
+</div>
+
+<script type="module" src="protect.js"></script>
+<script type="module" src="settings.js"></script>
+<script type="module" src="logout.js"></script>
+
+</body>
+</html>

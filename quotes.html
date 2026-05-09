@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <title>Quote Requests | Imani Logistics UK</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+<div class="admin-container">
+
+    <!-- ================= SIDEBAR ================= -->
+    <aside class="sidebar">
+        <div class="logo">
+            <h2>Imani Logistics UK</h2>
+        </div>
+
+        <nav>
+            <ul class="sidebar-menu">
+
+                <li>
+                    <a href="dashboard.html">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+
+                <!-- 🔴 REAL-TIME BADGE -->
+                <li class="active">
+                    <a href="quotes.html">
+                        <i class="fas fa-file-invoice"></i>
+                        <span>Quote Requests</span>
+                        <span id="pendingBadge" class="badge">0</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="shipments.html">
+                        <i class="fas fa-truck"></i>
+                        <span>Shipments</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="customers.html">
+                        <i class="fas fa-users"></i>
+                        <span>Customers</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="customer-service.html">
+                        <i class="fas fa-headset"></i>
+                        <span>Customer Service</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="settings.html">
+                        <i class="fas fa-cog"></i>
+                        <span>Settings</span>
+                    </a>
+                </li>
+
+                <li class="logout">
+                    <a href="#" id="logoutBtn">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span>Log Out</span>
+                    </a>
+                </li>
+
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- ================= MAIN CONTENT ================= -->
+    <main class="main-content">
+
+        <!-- Top Bar -->
+        <header class="topbar">
+            <h1>Quote Requests</h1>
+            <div class="admin-profile">
+                <i class="fas fa-user-circle"></i>
+            </div>
+        </header>
+
+        <!-- Table Section -->
+        <section class="table-section">
+
+            <div class="section-header">
+                <h2>All Incoming Requests</h2>
+
+                <div class="search-bar">
+                    <input 
+                        type="text" 
+                        id="searchInput" 
+                        placeholder="Search by name, email, or route..."
+                        aria-label="Search quotes">
+                </div>
+            </div>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Customer</th>
+                            <th>Route</th>
+                            <th>Shipment Type</th>
+                            <th>Status</th>
+                            <th>Date</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="quotesTableBody">
+                        <!-- 🔥 Real-time quotes load here -->
+                    </tbody>
+                </table>
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+<!-- ================= SCRIPTS ================= -->
+<script type="module" src="protect.js"></script>
+<script type="module" src="quotes.js"></script>
+<script type="module" src="logout.js"></script>
+
+</body>
+</html>

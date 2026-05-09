@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <title>Shipments - Imani Logistics UK</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+<div class="admin-container">
+
+    <!-- ================= SIDEBAR ================= -->
+    <aside class="sidebar">
+        <div class="logo">
+            <h2>Imani Logistics UK</h2>
+        </div>
+
+        <ul class="sidebar-menu">
+            <li><a href="dashboard.html"><i class="fas fa-chart-line"></i> Dashboard</a></li>
+            <li><a href="quotes.html"><i class="fas fa-file-invoice"></i> Quote Requests</a></li>
+            <li class="active"><a href="shipments.html"><i class="fas fa-truck"></i> Shipments</a></li>
+            <li><a href="customers.html"><i class="fas fa-users"></i> Customers</a></li>
+            <li><a href="customer-service.html"><i class="fas fa-headset"></i> Customer Service</a></li>
+            <li><a href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+            <li>
+                <a href="#" id="logoutBtn">
+                    <i class="fas fa-sign-out-alt"></i> Log Out
+                </a>
+            </li>
+        </ul>
+    </aside>
+
+    <!-- ================= MAIN CONTENT ================= -->
+    <main class="main-content">
+
+        <!-- Topbar -->
+        <div class="topbar">
+            <h1>Shipment Management</h1>
+            <div class="admin-profile">
+                <i class="fas fa-user-circle"></i>
+            </div>
+        </div>
+
+        <!-- ================= SHIPMENT STATS ================= -->
+        <section class="stats">
+            <div class="card">
+                <h3>Total Shipments</h3>
+                <p id="totalShipments">0</p>
+            </div>
+
+            <div class="card">
+                <h3>In Transit</h3>
+                <p id="inTransit">0</p>
+            </div>
+
+            <div class="card">
+                <h3>Delivered</h3>
+                <p id="delivered">0</p>
+            </div>
+
+            <div class="card">
+                <h3>Delayed</h3>
+                <p id="delayed">0</p>
+            </div>
+        </section>
+
+        <!-- ================= SHIPMENT TABLE ================= -->
+        <section class="table-section">
+
+            <div class="section-header">
+                <h2>All Shipments</h2>
+
+                <div class="search-bar">
+                    <input type="text" id="searchInput" 
+                        placeholder="Search tracking ID, customer, or route...">
+
+                    <button class="btn btn-outline" 
+                        onclick="openShipmentModal()">
+                        <i class="fas fa-plus"></i> Create Shipment
+                    </button>
+                </div>
+            </div>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tracking ID</th>
+                            <th>Customer</th>
+                            <th>Route</th>
+                            <th>Shipment Type</th>
+                            <th>Status</th>
+                            <th>Estimated Delivery</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="shipmentsTableBody">
+                        <!-- Real-time Data -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- ✅ Pagination Controls -->
+            <div id="pagination" class="pagination"></div>
+
+        </section>
+
+    </main>
+</div>
+
+<!-- ================= CREATE SHIPMENT MODAL ================= -->
+<div class="modal" id="shipmentModal">
+    <div class="modal-content">
+
+        <div class="modal-header">
+            <h2>Create Shipment</h2>
+            <span class="close-modal" onclick="closeShipmentModal()">&times;</span>
+        </div>
+
+        <div class="modal-body">
+            <label>Customer Name</label>
+            <input type="text" id="newCustomer" class="form-control">
+
+            <label>Route</label>
+            <input type="text" id="newRoute" class="form-control">
+
+            <label>Shipment Type</label>
+            <select id="newType" class="form-control">
+                <option>Road Freight</option>
+                <option>Air Freight</option>
+                <option>Sea Freight</option>
+            </select>
+
+            <label>Estimated Delivery Date</label>
+            <input type="date" id="newDate" class="form-control">
+        </div>
+
+        <div class="modal-footer">
+            <button class="btn btn-primary" id="createShipmentBtn">
+                Create Shipment
+            </button>
+
+            <button class="btn btn-outline" onclick="closeShipmentModal()">
+                Cancel
+            </button>
+        </div>
+
+    </div>
+</div>
+
+<!-- ================= SCRIPTS ================= -->
+<script>
+function openShipmentModal() {
+    document.getElementById("shipmentModal").style.display = "flex";
+}
+function closeShipmentModal() {
+    document.getElementById("shipmentModal").style.display = "none";
+}
+</script>
+
+<script type="module" src="protect.js"></script>
+<script type="module" src="shipments.js"></script>
+<script type="module" src="logout.js"></script>
+
+</body>
+</html>

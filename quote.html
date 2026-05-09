@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Get a Quote – Imani Gift Logistics</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="container header-wrapper">
+      <div class="logo">
+        <img src="Imani_Logistics_1.png" alt="Imani Gift Logistics Logo" />
+      </div>
+      <nav class="nav">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="service.html">Services</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="auth-buttons">
+        <a href="quote.html" class="btn btn-outline active">Get a Quote</a>
+        <a href="track.html" class="btn btn-primary">Track Shipment</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="quote-section">
+    <div class="container">
+      <h2 class="section-title">Request Your Instant Quote</h2>
+      <div class="quote-form-card">
+        <form id="quoteForm" novalidate>
+          <div class="form-grid">
+
+            <!-- BASIC INFORMATION -->
+            <div class="form-group">
+              <label for="fullname">Full Name</label>
+              <input type="text" id="fullname" name="fullname" required placeholder="Enter your full name" />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" required placeholder="Enter your email" />
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" required placeholder="Enter your phone number" />
+            </div>
+
+            <div class="form-group">
+              <label for="service">Service Required</label>
+              <select id="service" name="service" required>
+                <option value="" disabled selected>Select a service</option>
+                <option value="home">Home Moves</option>
+                <option value="office">Office Moves</option>
+                <option value="freight">Freight</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="origin">Origin</label>
+              <input type="text" id="origin" name="origin" required placeholder="Pickup location" />
+            </div>
+
+            <div class="form-group">
+              <label for="destination">Destination</label>
+              <input type="text" id="destination" name="destination" required placeholder="Delivery location" />
+            </div>
+
+            <div class="form-group form-full">
+              <label for="cargo">Cargo Description</label>
+              <textarea id="cargo" name="cargo" rows="3" placeholder="Describe the items being moved"></textarea>
+            </div>
+
+            <!-- QUESTIONNAIRE -->
+            <div class="form-group form-full">
+              <h3>Moving & Logistics Questionnaire</h3>
+              <p>Please complete the details below to help us provide an accurate quote.</p>
+            </div>
+
+            <div class="form-group">
+              <label for="packing">Packing Responsibility</label>
+              <select id="packing" name="packing">
+                <option value="self">Self Pack</option>
+                <option value="service">Need Packing Service</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="materials">Materials Needed</label>
+              <select id="materials" name="materials">
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="furniture">Furniture Disassembly</label>
+              <select id="furniture" name="furniture">
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+              </select>
+            </div>
+
+            <div class="form-group form-full">
+              <label for="fragile">Fragile Items</label>
+              <textarea id="fragile" name="fragile" rows="2" placeholder="List any fragile items"></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="floors">Floor Levels</label>
+              <input type="text" id="floors" name="floors" placeholder="E.g., 2nd floor" />
+            </div>
+
+            <div class="form-group">
+              <label for="elevator">Elevator Type</label>
+              <select id="elevator" name="elevator">
+                <option value="none">None</option>
+                <option value="passenger">Passenger</option>
+                <option value="freight">Freight</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="parking">Parking Availability</label>
+              <select id="parking" name="parking">
+                <option value="driveway">Driveway</option>
+                <option value="street">Street</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="distance">Walking Distance Over 20m</label>
+              <select id="distance" name="distance">
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+              </select>
+            </div>
+
+            <div class="form-group form-full">
+              <label for="access">Tight Spaces / Special Access Notes</label>
+              <textarea id="access" name="access" rows="2"></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="supervisor">Supervisor Present on Move Day</label>
+              <select id="supervisor" name="supervisor">
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="help">Extra Help Required</label>
+              <select id="help" name="help">
+                <option value="full">Full Service</option>
+                <option value="partial">Partial Help</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="appliances">Appliance Handling Assistance</label>
+              <select id="appliances" name="appliances">
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="boxes">Estimated Number of Boxes</label>
+              <input type="number" id="boxes" name="boxes" min="0" placeholder="Enter number of boxes" />
+            </div>
+
+            <div class="form-group form-full">
+              <label for="bulky">Bulky or Oversized Items</label>
+              <textarea id="bulky" name="bulky" rows="2"></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="timing">Preferred Moving Date & Time</label>
+              <input type="text" id="timing" name="timing" placeholder="E.g., June 20, 10AM" />
+            </div>
+
+            <div class="form-group">
+              <label for="storage">Storage Needed</label>
+              <select id="storage" name="storage">
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+              </select>
+            </div>
+
+          </div>
+
+          <div id="formMessage" class="form-message" style="display: none;"></div>
+
+          <div class="submit-area">
+            <button type="submit" id="submitBtn" class="btn btn-primary btn-large">
+              <i class="fa-solid fa-calculator"></i> Get My Quote
+            </button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <script type="module" src="quote.js"></script>
+
+</body>
+</html>

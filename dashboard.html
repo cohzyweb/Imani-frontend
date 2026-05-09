@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Panel - Imani Logistics UK</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+<div class="admin-container">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="logo">
+            <h2>Imani Logistics UK</h2>
+        </div>
+
+        <ul class="sidebar-menu">
+            <li class="active">
+                <a href="dashboard.html"><i class="fas fa-chart-line"></i> Dashboard</a>
+            </li>
+            <li>
+                <a href="quotes.html"><i class="fas fa-file-invoice"></i> Quote Requests</a>
+            </li>
+            <li>
+                <a href="shipments.html"><i class="fas fa-truck"></i> Shipments</a>
+            </li>
+            <li>
+                <a href="customers.html"><i class="fas fa-users"></i> Customers</a>
+            </li>
+            <li>
+                <a href="customer-service.html"><i class="fas fa-headset"></i> Customer Service</a>
+            </li>
+            <li>
+                <a href="settings.html"><i class="fas fa-cog"></i> Settings</a>
+            </li>
+            <li>
+                <a href="#" id="logoutBtn">
+                    <i class="fas fa-sign-out-alt"></i> Log Out
+                </a>
+            </li>
+        </ul>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- Topbar -->
+        <div class="topbar">
+            <h1>Dashboard Overview</h1>
+            <div class="admin-profile">
+                <i class="fas fa-user-circle"></i>
+            </div>
+        </div>
+
+        <!-- STATS -->
+        <section class="stats">
+            <div class="card">
+                <h3>Total Shipments</h3>
+                <p id="totalShipments">0</p>
+            </div>
+
+            <div class="card">
+                <h3>Pending Quotes</h3>
+                <p id="pendingQuotes">0</p>
+            </div>
+
+            <div class="card">
+                <h3>Active Customers</h3>
+                <p id="activeCustomers">0</p>
+            </div>
+
+            <div class="card">
+                <h3>Revenue (This Month)</h3>
+                <p id="monthlyRevenue">£0</p>
+            </div>
+        </section>
+
+        <!-- RECENT QUOTES -->
+        <section class="table-section">
+            <div class="section-header">
+                <h2>Recent Quote Requests</h2>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Customer</th>
+                        <th>Route</th>
+                        <th>Shipment Type</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody id="recentQuotesBody">
+                </tbody>
+            </table>
+        </section>
+
+    </main>
+</div>
+
+<script type="module" src="protect.js"></script>
+<script type="module" src="dashboard.js"></script>
+<script type="module" src="logout.js"></script>
+
+</body>
+</html>

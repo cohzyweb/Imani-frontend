@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us – Imani Gift Logistics</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PZQ3SX1TY1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PZQ3SX1TY1');
+</script>
+</head>
+<body>
+
+<!-- ================= HEADER (reused from your existing design) ================= -->
+<header class="header">
+    <div class="container header-wrapper">
+        <div class="logo">
+            <img src="Imani_Logistics_1.png" alt="Imani Gift Logistics logo">
+        </div>
+
+        <nav class="nav" aria-label="Main navigation">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="service.html">Services</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </nav>
+
+        <div class="auth-buttons">
+            <a href="quote.html" class="btn btn-outline">Get a Quote</a>
+            <a href="track.html" class="btn btn-primary">Track Shipment</a>
+        </div>
+
+        <button type="button" class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+</header>
+
+<!-- ================= CONTACT HERO ================= -->
+<section class="contact-hero">
+    <div class="container">
+        <h1>Get in Touch</h1>
+        <p>Have questions or need support? We’re here to help you anytime.</p>
+    </div>
+</section>
+
+<!-- ================= CONTACT SECTION ================= -->
+<section class="contact-section">
+    <div class="container contact-wrapper">
+
+        <!-- CONTACT INFO -->
+        <div class="contact-info">
+            <h2>Contact Information</h2>
+            <p>Reach out to us through any of the channels below.</p>
+
+            <div class="info-item">
+                <i class="fas fa-location-dot"></i>
+                <span>Wales Newport, United Kingdom</span>
+            </div>
+
+            <div class="info-item">
+                <i class="fas fa-phone"></i>
+                <span>07473 847235</span>
+            </div>
+
+            <div class="info-item">
+                <i class="fas fa-envelope"></i>
+                <span>logistics@imanigifts.co.uk</span>
+            </div>
+
+            <div class="social-links">
+               <a href="https://www.tiktok.com/@imanigiftslogisti?_r=1&_t=ZN-93s4yZrfjyo" target="_blank"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://www.facebook.com/share/181meQYqVm/?mibextid=wwXIfr"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/imanigiftslogistics?igsh=MWppN2V5ZWk0bm13Zg%3D%3D&utm_source=qr"><i class="fab fa-instagram"></i></a>
+                    <a href="logistics@imanigifts.co.uk"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+        </div>
+
+        <!-- CONTACT FORM -->
+        <div class="contact-form">
+            <h2>Send Us a Message</h2>
+
+            <form>
+                <div class="form-group">
+                    <input type="text" placeholder="Your Name" required>
+                </div>
+
+                <div class="form-group">
+                    <input type="email" placeholder="Your Email" required>
+                </div>
+
+                <div class="form-group">
+                    <input type="text" placeholder="Subject">
+                </div>
+
+                <div class="form-group">
+                    <textarea rows="5" placeholder="Your Message" required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary">
+                    Send Message
+                </button>
+            </form>
+        </div>
+
+    </div>
+</section>
+
+<!-- ================= MOBILE MENU SCRIPT ================= -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const toggle = document.querySelector('.menu-toggle');
+        const nav = document.querySelector('.nav');
+        if (toggle && nav) {
+            toggle.addEventListener('click', function() {
+                nav.classList.toggle('active');
+                this.setAttribute('aria-expanded', nav.classList.contains('active'));
+            });
+        }
+    });
+</script>
+
+</body>
+</html>

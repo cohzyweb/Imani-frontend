@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Panel - Customers | Imani Logistics UK</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+<div class="admin-container">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="logo">
+            <h2>Imani Logistics UK</h2>
+        </div>
+
+        <ul class="sidebar-menu">
+            <li><a href="dashboard.html"><i class="fas fa-chart-line"></i> Dashboard</a></li>
+            <li><a href="quotes.html"><i class="fas fa-file-invoice"></i> Quote Requests</a></li>
+            <li><a href="shipments.html"><i class="fas fa-truck"></i> Shipments</a></li>
+            <li class="active"><a href="customers.html"><i class="fas fa-users"></i> Customers</a></li>
+            <li><a href="customer-service.html"><i class="fas fa-headset"></i> Customer Service</a></li>
+            <li><a href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+            <li>
+                <a href="#" id="logoutBtn">
+                    <i class="fas fa-sign-out-alt"></i> Log Out
+                </a>
+            </li>
+        </ul>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main-content">
+
+        <div class="topbar">
+            <h1>Customer Management</h1>
+            <div class="admin-profile">
+                <i class="fas fa-user-circle"></i>
+            </div>
+        </div>
+
+        <!-- LIVE STATS -->
+        <section class="stats">
+            <div class="card">
+                <h3>Total Customers</h3>
+                <p id="totalCustomers">0</p>
+            </div>
+
+            <div class="card">
+                <h3>Active Customers</h3>
+                <p id="activeCustomers">0</p>
+            </div>
+
+            <div class="card">
+                <h3>Inactive Customers</h3>
+                <p id="inactiveCustomers">0</p>
+            </div>
+
+            <div class="card">
+                <h3>VIP Customers</h3>
+                <p id="vipCustomers">0</p>
+            </div>
+        </section>
+
+        <!-- TABLE -->
+        <section class="table-section">
+            <div class="section-header">
+                <h2>All Customers</h2>
+
+                <div class="search-bar">
+                    <input type="text" id="searchCustomer" placeholder="Search customers...">
+                    <button class="btn btn-primary" id="openAddCustomer">
+                        <i class="fas fa-plus"></i> Add Customer
+                    </button>
+                </div>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Customer</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Shipments</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="customersTableBody">
+                    <!-- Live customers load here -->
+                </tbody>
+            </table>
+        </section>
+
+    </main>
+</div>
+
+<!-- ADD CUSTOMER MODAL -->
+<div class="modal" id="addCustomerModal">
+    <div class="modal-content">
+        <h2>Add New Customer</h2>
+
+        <input type="text" id="customerName" class="form-control" placeholder="Full Name">
+        <input type="email" id="customerEmail" class="form-control" placeholder="Email Address">
+        <input type="text" id="customerPhone" class="form-control" placeholder="Phone Number">
+
+        <select id="customerStatus" class="form-control">
+            <option value="Active">Active</option>
+            <option value="Inactive">Inactive</option>
+            <option value="VIP">VIP</option>
+        </select>
+
+        <button class="btn btn-primary" id="saveCustomerBtn">Save Customer</button>
+        <button class="btn btn-outline" id="closeCustomerModal">Cancel</button>
+    </div>
+</div>
+
+<script type="module" src="protect.js"></script>
+<script type="module" src="customers.js"></script>
+<script type="module" src="logout.js"></script>
+
+</body>
+</html>
