@@ -4,7 +4,48 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (menuToggle && nav) {
         menuToggle.addEventListener('click', () => {
-            nav.classList.toggle('active');
+            const isOpen = nav.classList.toggle('active');
+            menuToggle.setAttribute('aria-expanded', isOpen);
+            document.body.style.overflow = isOpen ? 'hidden' : '';
+        });
+
+        // Close drawer when tapping the backdrop or a nav link
+        nav.addEventListener('click', (e) => {
+            if (e.target === nav || e.target.closest('a')) {
+                nav.classList.remove('active');
+                menuToggle.setAttribute('aria-expanded', 'false');
+                document.body.style.overflow = '';
+            }
+        });
+    }
+
+    // Header scroll state
+    const header = document.querySelector('.header');
+    if (header) {
+        const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 12);
+        onScroll();
+        window.addEventListener('scroll', onScroll, { passive: true });
+    }
+
+    // Scroll-reveal for below-the-fold sections (no effect on visible content)
+    if ('IntersectionObserver' in window) {
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    io.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+        document.body.classList.add('reveal-ready');
+
+        document.querySelectorAll('body > section, body > footer').forEach((el) => {
+            const rect = el.getBoundingClientRect();
+            if (rect.top > window.innerHeight * 0.92) {
+                el.classList.add('will-reveal');
+                io.observe(el);
+            }
         });
     }
 });
@@ -38,7 +79,7 @@ document.addEventListener("DOMContentLoaded", function(){
     if(!banner || !acceptBtn) return;
 
     if(!getCookie("cookieConsent")){
-        banner.style.display = "block";
+        banner.style.display = "flex";
     }
 
     acceptBtn.addEventListener("click", function(){
