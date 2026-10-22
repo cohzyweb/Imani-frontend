@@ -35,6 +35,8 @@ document.addEventListener("DOMContentLoaded", function(){
     const banner = document.getElementById("cookie-banner");
     const acceptBtn = document.getElementById("acceptCookies");
 
+    if(!banner || !acceptBtn) return;
+
     if(!getCookie("cookieConsent")){
         banner.style.display = "block";
     }
